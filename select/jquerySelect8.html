@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>선택자</title>
+    <script src="jquery-1.10.2.min.js"></script>
+  </head>
+  <style></style>
+  <body>
+    <div id="wrap">
+      <h1 class="title">선택자</h1>
+      <p>내용1</p>
+      <p>내용2</p>
+      <p class="txt3">내용3</p>
+      <p>내용4</p>
+      <p>내용5</p>
+      <p class="txt6">내용6</p>
+    </div>
+    <script>
+      $(function () {
+        //변수에 스타일을 적용
+        const style_1 = {
+          "background-color":"#0ff",
+          "border":"2px solid #f00",
+          "color" : "red"
+        }
+        const style_2 = {
+          "background-color":"#ff0",
+          "border":"2px dashed #f00",
+          "font-size" : "20px"
+        }
+        $(".txt3").prevUntil(".title").css(style_1) //prevUntil 특정영역포함안하고 까지
+        $(".txt3").nextUntil(".txt6").css(style_2) 
+      });
+    </script>
+  </body>
+</html>
