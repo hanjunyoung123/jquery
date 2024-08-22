@@ -3,13 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>이펙트 예제</title>
+    <title>Document</title>
     <script src="jquery-1.10.2.min.js"></script>
     <style>
+
       .box {
         width: 100px;
         height: 100px;
         margin-bottom: 10px;
+      }
+      .red{
+        background-color: red;
       }
     </style>
   </head>
@@ -30,19 +34,76 @@
       <input type="button" value="slidedown" class="slidedown" />
       <input type="button" value="slidetoggle" class="slidetoggle" />
     </div>
-    <div class="content">
-    
-    </div>
+    <div class="content"></div>
     <script>
-        $(".append").click(()=>{
-            $(".content").append(`<div class="box"></div>`)
-            $(".box").last().css("background-color",makeColor)
+      $(".append").click(() => {
+        $(".content").append(`<div class="box"></div>`);
+        $(".box").last().css("background-color", makeColor);
+      });
+      function makeColor() {
+        const randomColor = "#" + Math.round(Math.random() * 0xffffff).toString(16);
+        // console.log(randomColor);
+        return randomColor
+      }
+      //박스 remove
+      $(".remove").click(function(){
+        $(".box").remove()
+      })
+      //박스 show
+      $(".show").click(function(){
+        $(".box").show()
+      })
+      //박스 hide
+      $(".hide").click(function(){
+        $(".box").hide()
+      })
+      //박스 toggle
+      $(".toggle").click(function(){
+        $(".box").toggle()
+      })
+      //박스 fedein
+      $(".fadein").click(function(){
+        $(".box").fadeIn(1000)
+      })
+      //박스 fadeOut
+      $(".fadeout").click(function(){
+        $(".box").fadeOut(1000)
+      })
+      //박스 fadeToggle
+      $(".fadetoggle").click(function(){
+        $(".box").fadeToggle(1000)
+      })
+      //박스 addclass
+      $(".addclass").click(function(){
+        $(".box").addClass("red")
+      })
+      //박스 removeClass
+      $(".removeclass").click(function(){
+        $(".box").removeClass("red")
+      })
+      //박스 toggleClass
+      $(".toggleclass").click(function(){
+        $(".box").toggleClass("red")
+      })
+      //박스 slideUp
+      $(".slideup").click(function(){
+        $(".box:odd").slideUp()
+      })
+      //박스 slideDown
+      $(".slidedown").click(function(){
+        // $(".box:odd").slideDown()
+        // $(".box:even").slideDown()
+        $(".box").slideDown()
+      })
+      $(".slidetoggle").click(function(){
+        $(".content div").each(function(index,item){
+          // console.log(index);
+          $(item).text(index)
         })
-        function makeColor(){
-            const randomColor = "#" + Math.round(Math.random() * 0xffffff).toString(16)
-            // console.log(randomColor);
-            return randomColor
-        }
+        // $(".box:odd").slideToggle()
+      $(".box:even").slideToggle()
+      })
+      
     </script>
-</body>
+  </body>
 </html>

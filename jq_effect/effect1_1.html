@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>이펙트</title>
+    <title>effect</title>
     <script src="jquery-1.10.2.min.js"></script>
     <style>
       .content {
         width: 400px;
-        background-color: #0ff;
+        background-color: #96f28c;
       }
     </style>
   </head>
@@ -34,27 +34,27 @@
       $(function () {
         $(".btn2").hide();
         $(".btn1").on("click", function () {
-          $(".box").slideUp(1000, "linear"), $(".btn2").show();
+          $(".box").slideUp(1000, "linear");
+          $(".btn2").show();
           $(".btn1").hide();
         });
         $(".btn2").on("click", function () {
-          $(".box").fadeIn(1000, "swing");
-          $(".btn1").show();
+          $(".box").fadeIn(1000 , "swing")
           $(".btn2").hide();
+          $(".btn1").show();
         });
-        $(function(){
-          $(".btn3").on("click",function(){
-            $(".box").slideToggle(1000,"linear")
-          })
+        $(".btn3").on("click" , function(){
+          $(".box").slideToggle(1000 , "linear")
         })
-        $(".btn4").on("click",function(){
-          // fadeTo(속도,투명도)
-          $(".box").fadeTo("fast",0.4)
+        $(".btn4").on("click" ,function(){
+          // fadeTo("속도" , 투명도)
+          $(".box").fadeTo("fast" , 0.4)
         })
-        $(".btn5").on("click",function(){
-          $(".box").fadeTo("fast",1)
-          // $(".box").fadeTo("slow",1)
+        $(".btn5").on("click" ,function(){
+          // fadeTo("속도" , 투명도)
+          $(".box").fadeTo("fast" , 1)
         })
+
       });
     </script>
   </body>
